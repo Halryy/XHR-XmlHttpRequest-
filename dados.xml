@@ -1,0 +1,25 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+ <!-- Elemento raíz -->
+<cafe_da_manha>
+    <refeicao>
+        <nome>Salgado</nome>
+        <preco>R$ 4,00</preco>
+        <descricao>Salgado da dona Maria</descricao>
+        <calorias>380 kcal</calorias>
+    </refeicao>
+
+    <refeicao>
+        <nome>Torrada</nome>
+        <preco>R$ 7,00</preco>
+        <descricao>Completa com ovo</descricao>
+        <calorias>480 kcal</calorias>
+    </refeicao>
+
+    <comida>
+        <nome>Suco</nome>
+        <preco>R$ 3,50</preco>
+        <descricao>Suco de laranja</descricao>
+        <calorias>160 kcal</calorias>
+    </comida>
+</cafe_da_manha>

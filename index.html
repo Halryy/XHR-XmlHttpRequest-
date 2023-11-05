@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação XHR</title>
+</head>
+<body>
+    <h1>Apresentação XHR (XML HTTP Request)</h1>
+    <button onclick="fazRequisicaoPost()">Fazer requisição</button>
+
+
+    <script>
+        
+        function fazRequisicaoGet() {
+            let xhr = new XMLHttpRequest();
+            let documento = 'oi mae';
+            console.log("documento antes da requisicao GET: ", documento);
+
+
+            xhr.responseType = "json";
+            xhr.onreadystatechange = function() {
+
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    alert("deu certo (GET)");
+                    // documento = JSON.parse(xhr.response);
+                    documento = xhr.response;
+                    console.log("documento após receber a requisicao GET: ", documento);
+
+                } else if (xhr.readyState == 4 && xhr.status != 200) {
+                    alert("deu ruim (GET)");
+                }
+            }
+
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/1");
+
+            // Status HTTP 200 significa que não tem erro
+            xhr.send();
+        }
+
+        function fazRequisicaoPost() {
+            let xhr = new XMLHttpRequest();
+            let documento = {
+                id: 2,
+                quantidade: 24,
+                nome: 'joaozinho'
+            }
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 201) {
+                    alert("enviado (POST)");
+                } else if (xhr.readyState == 4 && xhr.status != 201) {
+                    alert("deu ruim (POST)");
+                }
+            }
+
+            xhr.open("POST", "https://jsonplaceholder.typicode.com/posts");
+
+            // Status HTTP 201 significa criado
+            xhr.send(documento)
+        }
+    </script>
+</body>
+</html>
