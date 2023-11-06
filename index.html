@@ -3,62 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação XHR</title>
+    <title>Requisição de demonstração</title>
 </head>
 <body>
-    <h1>Apresentação XHR (XML HTTP Request)</h1>
-    <button onclick="fazRequisicaoPost()">Fazer requisição</button>
-
+    <h1>Requisição de demonstração</h1>
+    <button onclick="fazerRequisicaoGet()">Fazer requisição</button>
 
     <script>
-        
-        function fazRequisicaoGet() {
-            let xhr = new XMLHttpRequest();
-            let documento = 'oi mae';
-            console.log("documento antes da requisicao GET: ", documento);
 
+        let xmlDocument = new DOMParser();
 
-            xhr.responseType = "json";
-            xhr.onreadystatechange = function() {
+        function fazerRequisicaoGet() {
+            let requisicao = new XMLHttpRequest();
 
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    alert("deu certo (GET)");
-                    // documento = JSON.parse(xhr.response);
-                    documento = xhr.response;
-                    console.log("documento após receber a requisicao GET: ", documento);
+            requisicao.onreadystatechange = function() {
+                if (requisicao.readyState == 4 && requisicao.status == 200) {
 
-                } else if (xhr.readyState == 4 && xhr.status != 200) {
-                    alert("deu ruim (GET)");
+                    xmlDocument = xmlDocument.parseFromString(requisicao.response, "text/xml");
+
+                    xmlDocument.querySelector("nome").textContent = "japones da federal";
+
+                    console.log(xmlDocument);
+
+                } else if (requisicao.readyState == 4 && requisicao.status != 200) {
+                    alert("deu ruim");
                 }
             }
 
-            xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/1");
-
-            // Status HTTP 200 significa que não tem erro
-            xhr.send();
+            requisicao.open("GET", "dados.xml");
+            requisicao.send();
         }
 
-        function fazRequisicaoPost() {
-            let xhr = new XMLHttpRequest();
+        function fazerRequisicaoPost() {
+            let requisicao = new XMLHttpRequest();
             let documento = {
-                id: 2,
-                quantidade: 24,
-                nome: 'joaozinho'
+                id: 0,
+                nome: 'joaozinho',
+                quantidade: 24
             }
 
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 201) {
-                    alert("enviado (POST)");
-                } else if (xhr.readyState == 4 && xhr.status != 201) {
-                    alert("deu ruim (POST)");
+            requisicao.onreadystatechange = function() {
+                if (requisicao.readyState == 4 && requisicao.status == 201) {
+                    alert(requisicao.response);
+                } else if (requisicao.readyState == 4 && requisicao.status != 201) {
+                    alert("deu ruim");
                 }
             }
 
-            xhr.open("POST", "https://jsonplaceholder.typicode.com/posts");
-
-            // Status HTTP 201 significa criado
-            xhr.send(documento)
+            requisicao.open("POST", "https://jsonplaceholder.typicode.com/posts");
+            requisicao.send(documento);
         }
+
     </script>
 </body>
 </html>
