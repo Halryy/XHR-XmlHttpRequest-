@@ -7,6 +7,8 @@ Código de exemplo para fazer requisições XHR.
 
 ---------------------------------------------------------------------------------------------------------------------
 
+(*ESTADOS DAS REQUISIÇÕES XHR*)
+
 0: Requisição não inicializada;
 
 1: Estabeleceu requisição com o servidor;
@@ -45,7 +47,7 @@ javascript, você pode fazer o que quiser com essas informações. Podia ser tan
 imagem ou até um arquivo do tipo BLOB que é um formato que você pode trazer uma imagem física em si.
 
 Resumindo, a ideia aqui basicamente era que você não perdesse o estado dos elementos na tela. Depois de um tempo isso
-evoluiu e criou-se um novo objeto chamado XmlHttpRequest. Ele virou o modelo padrão de objeto em todos os navegadores
+evoluiu e criou-se um novo objeto chamado XmlHttpRequest. Ele virou o modelo padrão de objeto em todos os navegadores.
 Então o ActiveXObject acabou ficando lá atrás só com o Internet Explorer 5.0 e posteriormente o 6.0, mas dali pra
 frente, o objeto que se padronizou mesmo foi o XmlHttpRequest que eu vou chamar de XHR só para encurtar. Hoje em dia
 ele é muito utilizado para trabalhar com requisições HTTP.
