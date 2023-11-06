@@ -1,7 +1,7 @@
 # XHR-XmlHttpRequest-
 Código de exemplo para fazer requisições XHR.
 
-É possível atribuir uma função para cada item do objeto XHR (XML HTTP Request).
+É possível atribuir uma função para a maioria das propriedades do objeto XHR (XML HTTP Request).
 
 ---------------------------------------------------------------------------------------------------------------------
 
