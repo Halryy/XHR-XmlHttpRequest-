@@ -3,12 +3,19 @@ Código de exemplo para fazer requisições XHR.
 
 É possível atribuir uma função para cada item do objeto XHR (XML HTTP Request).
 
+---------------------------------------------------------------------------------------------------------------------
+
 0: Requisição não inicializada;
+
 1: Estabeleceu requisição com o servidor;
+
 2: Pedido recebido;
+
 3: Processando pedido;
+
 4: Solicitação concluída e resposta pronta;
 
+----------------------------------------------------------------------------------------------------------------------
 Para iniciar, imagine que duas pessoas estão conversando. Para estas pessoas se entenderem, elas tem que entender
 a língua que estão falando, correto? Então é a mesma coisa entre computadores que precisam trocar dados/informações.
 Então precisamos de uma maneira mais estruturada e formatada, e também precisamos trocar informações com sintáxe em
