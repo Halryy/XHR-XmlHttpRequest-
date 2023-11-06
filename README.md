@@ -3,6 +3,8 @@ Código de exemplo para fazer requisições XHR.
 
 É possível atribuir uma função para a maioria das propriedades do objeto XHR (XML HTTP Request).
 
+[XML e XHR.pdf](https://github.com/Halryy/XHR-XmlHttpRequest-/files/13270637/XML.e.XHR.pdf)
+
 ---------------------------------------------------------------------------------------------------------------------
 
 0: Requisição não inicializada;
